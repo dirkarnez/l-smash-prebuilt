@@ -46,7 +46,7 @@ jobs:
             export PATH="${{ github.workspace }}/nasm-2.15.05:${{ github.workspace }}/mingw64:${{ github.workspace }}/mingw64/bin:${{ github.workspace }}/msys64/usr/bin:/usr/bin" &&
             cd l-smash &&
             g++ --version && 
-            ./configure --enable-static --disable-shared --prefix="$(pwd)/${{ env.installationPath }}" &&
+            ./configure --prefix="$(pwd)/${{ env.installationPath }}" &&
             make &&
             make install
             
