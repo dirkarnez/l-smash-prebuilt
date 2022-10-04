@@ -47,8 +47,7 @@ jobs:
             cd l-smash &&
             g++ --version && 
             ./configure --prefix="$(pwd)/${{ env.installationPath }}" &&
-            make &&
-            make install
+            make && make install
             
       - name: Archive Release
         uses: thedoctor0/zip-release@master
@@ -62,3 +61,4 @@ jobs:
         with:
           artifacts: "${{ github.workspace }}/l-smash/${{ env.installationPath }}/${{ env.mingwTargetZip }}"
           allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
